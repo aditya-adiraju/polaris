@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Stop {
 
- int get id; String? get code; String get name; String? get ttsName; String? get description; double get lat; double get lon; String? get zoneId; int get locationType; int? get parentStation; String? get timezone; int? get wheelchairBoarding; int? get levelId; String? get platformCode; int? get access;
+ String get id; String? get code; String get name; String? get ttsName; String? get description; double get lat; double get lon; String? get zoneId; int get locationType; String? get parentStation; String? get timezone; int? get wheelchairBoarding; int? get levelId; String? get platformCode; int? get access;
 /// Create a copy of Stop
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $StopCopyWith<$Res>  {
   factory $StopCopyWith(Stop value, $Res Function(Stop) _then) = _$StopCopyWithImpl;
 @useResult
 $Res call({
- int id, String? code, String name, String? ttsName, String? description, double lat, double lon, String? zoneId, int locationType, int? parentStation, String? timezone, int? wheelchairBoarding, int? levelId, String? platformCode, int? access
+ String id, String? code, String name, String? ttsName, String? description, double lat, double lon, String? zoneId, int locationType, String? parentStation, String? timezone, int? wheelchairBoarding, int? levelId, String? platformCode, int? access
 });
 
 
@@ -68,7 +68,7 @@ class _$StopCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? code = freezed,Object? name = null,Object? ttsName = freezed,Object? description = freezed,Object? lat = null,Object? lon = null,Object? zoneId = freezed,Object? locationType = null,Object? parentStation = freezed,Object? timezone = freezed,Object? wheelchairBoarding = freezed,Object? levelId = freezed,Object? platformCode = freezed,Object? access = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,code: freezed == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,code: freezed == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,ttsName: freezed == ttsName ? _self.ttsName : ttsName // ignore: cast_nullable_to_non_nullable
 as String?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
@@ -77,7 +77,7 @@ as double,lon: null == lon ? _self.lon : lon // ignore: cast_nullable_to_non_nul
 as double,zoneId: freezed == zoneId ? _self.zoneId : zoneId // ignore: cast_nullable_to_non_nullable
 as String?,locationType: null == locationType ? _self.locationType : locationType // ignore: cast_nullable_to_non_nullable
 as int,parentStation: freezed == parentStation ? _self.parentStation : parentStation // ignore: cast_nullable_to_non_nullable
-as int?,timezone: freezed == timezone ? _self.timezone : timezone // ignore: cast_nullable_to_non_nullable
+as String?,timezone: freezed == timezone ? _self.timezone : timezone // ignore: cast_nullable_to_non_nullable
 as String?,wheelchairBoarding: freezed == wheelchairBoarding ? _self.wheelchairBoarding : wheelchairBoarding // ignore: cast_nullable_to_non_nullable
 as int?,levelId: freezed == levelId ? _self.levelId : levelId // ignore: cast_nullable_to_non_nullable
 as int?,platformCode: freezed == platformCode ? _self.platformCode : platformCode // ignore: cast_nullable_to_non_nullable
@@ -167,7 +167,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String? code,  String name,  String? ttsName,  String? description,  double lat,  double lon,  String? zoneId,  int locationType,  int? parentStation,  String? timezone,  int? wheelchairBoarding,  int? levelId,  String? platformCode,  int? access)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? code,  String name,  String? ttsName,  String? description,  double lat,  double lon,  String? zoneId,  int locationType,  String? parentStation,  String? timezone,  int? wheelchairBoarding,  int? levelId,  String? platformCode,  int? access)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Stop() when $default != null:
 return $default(_that.id,_that.code,_that.name,_that.ttsName,_that.description,_that.lat,_that.lon,_that.zoneId,_that.locationType,_that.parentStation,_that.timezone,_that.wheelchairBoarding,_that.levelId,_that.platformCode,_that.access);case _:
@@ -188,7 +188,7 @@ return $default(_that.id,_that.code,_that.name,_that.ttsName,_that.description,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String? code,  String name,  String? ttsName,  String? description,  double lat,  double lon,  String? zoneId,  int locationType,  int? parentStation,  String? timezone,  int? wheelchairBoarding,  int? levelId,  String? platformCode,  int? access)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? code,  String name,  String? ttsName,  String? description,  double lat,  double lon,  String? zoneId,  int locationType,  String? parentStation,  String? timezone,  int? wheelchairBoarding,  int? levelId,  String? platformCode,  int? access)  $default,) {final _that = this;
 switch (_that) {
 case _Stop():
 return $default(_that.id,_that.code,_that.name,_that.ttsName,_that.description,_that.lat,_that.lon,_that.zoneId,_that.locationType,_that.parentStation,_that.timezone,_that.wheelchairBoarding,_that.levelId,_that.platformCode,_that.access);case _:
@@ -208,7 +208,7 @@ return $default(_that.id,_that.code,_that.name,_that.ttsName,_that.description,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String? code,  String name,  String? ttsName,  String? description,  double lat,  double lon,  String? zoneId,  int locationType,  int? parentStation,  String? timezone,  int? wheelchairBoarding,  int? levelId,  String? platformCode,  int? access)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? code,  String name,  String? ttsName,  String? description,  double lat,  double lon,  String? zoneId,  int locationType,  String? parentStation,  String? timezone,  int? wheelchairBoarding,  int? levelId,  String? platformCode,  int? access)?  $default,) {final _that = this;
 switch (_that) {
 case _Stop() when $default != null:
 return $default(_that.id,_that.code,_that.name,_that.ttsName,_that.description,_that.lat,_that.lon,_that.zoneId,_that.locationType,_that.parentStation,_that.timezone,_that.wheelchairBoarding,_that.levelId,_that.platformCode,_that.access);case _:
@@ -226,7 +226,7 @@ class _Stop implements Stop {
   const _Stop({required this.id, this.code, required this.name, this.ttsName, this.description, required this.lat, required this.lon, this.zoneId, required this.locationType, this.parentStation, this.timezone, this.wheelchairBoarding, this.levelId, this.platformCode, this.access});
   factory _Stop.fromJson(Map<String, dynamic> json) => _$StopFromJson(json);
 
-@override final  int id;
+@override final  String id;
 @override final  String? code;
 @override final  String name;
 @override final  String? ttsName;
@@ -235,7 +235,7 @@ class _Stop implements Stop {
 @override final  double lon;
 @override final  String? zoneId;
 @override final  int locationType;
-@override final  int? parentStation;
+@override final  String? parentStation;
 @override final  String? timezone;
 @override final  int? wheelchairBoarding;
 @override final  int? levelId;
@@ -275,7 +275,7 @@ abstract mixin class _$StopCopyWith<$Res> implements $StopCopyWith<$Res> {
   factory _$StopCopyWith(_Stop value, $Res Function(_Stop) _then) = __$StopCopyWithImpl;
 @override @useResult
 $Res call({
- int id, String? code, String name, String? ttsName, String? description, double lat, double lon, String? zoneId, int locationType, int? parentStation, String? timezone, int? wheelchairBoarding, int? levelId, String? platformCode, int? access
+ String id, String? code, String name, String? ttsName, String? description, double lat, double lon, String? zoneId, int locationType, String? parentStation, String? timezone, int? wheelchairBoarding, int? levelId, String? platformCode, int? access
 });
 
 
@@ -295,7 +295,7 @@ class __$StopCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? code = freezed,Object? name = null,Object? ttsName = freezed,Object? description = freezed,Object? lat = null,Object? lon = null,Object? zoneId = freezed,Object? locationType = null,Object? parentStation = freezed,Object? timezone = freezed,Object? wheelchairBoarding = freezed,Object? levelId = freezed,Object? platformCode = freezed,Object? access = freezed,}) {
   return _then(_Stop(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,code: freezed == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,code: freezed == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,ttsName: freezed == ttsName ? _self.ttsName : ttsName // ignore: cast_nullable_to_non_nullable
 as String?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
@@ -304,7 +304,7 @@ as double,lon: null == lon ? _self.lon : lon // ignore: cast_nullable_to_non_nul
 as double,zoneId: freezed == zoneId ? _self.zoneId : zoneId // ignore: cast_nullable_to_non_nullable
 as String?,locationType: null == locationType ? _self.locationType : locationType // ignore: cast_nullable_to_non_nullable
 as int,parentStation: freezed == parentStation ? _self.parentStation : parentStation // ignore: cast_nullable_to_non_nullable
-as int?,timezone: freezed == timezone ? _self.timezone : timezone // ignore: cast_nullable_to_non_nullable
+as String?,timezone: freezed == timezone ? _self.timezone : timezone // ignore: cast_nullable_to_non_nullable
 as String?,wheelchairBoarding: freezed == wheelchairBoarding ? _self.wheelchairBoarding : wheelchairBoarding // ignore: cast_nullable_to_non_nullable
 as int?,levelId: freezed == levelId ? _self.levelId : levelId // ignore: cast_nullable_to_non_nullable
 as int?,platformCode: freezed == platformCode ? _self.platformCode : platformCode // ignore: cast_nullable_to_non_nullable

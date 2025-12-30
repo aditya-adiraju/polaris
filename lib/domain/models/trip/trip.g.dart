@@ -7,14 +7,14 @@ part of 'trip.dart';
 // **************************************************************************
 
 _Trip _$TripFromJson(Map<String, dynamic> json) => _Trip(
-  id: (json['id'] as num).toInt(),
-  routeId: (json['routeId'] as num).toInt(),
-  serviceId: (json['serviceId'] as num).toInt(),
+  id: json['id'] as String,
+  routeId: json['routeId'] as String,
+  serviceId: json['serviceId'] as String,
   headsign: json['headsign'] as String?,
   shortName: json['shortName'] as String?,
   directionId: $enumDecodeNullable(_$DirectionIdEnumMap, json['directionId']),
-  blockId: (json['blockId'] as num?)?.toInt(),
-  shapeId: (json['shapeId'] as num?)?.toInt(),
+  blockId: json['blockId'] as String?,
+  shapeId: json['shapeId'] as String?,
   bikesAllowed: (json['bikesAllowed'] as num?)?.toInt(),
   carsAllowed: (json['carsAllowed'] as num?)?.toInt(),
 );

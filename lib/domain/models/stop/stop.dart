@@ -1,13 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'stop.freezed.dart';
 
+part 'stop.freezed.dart';
 part 'stop.g.dart';
 
-
 @freezed
-class Stop with _$Stop {
+abstract class Stop with _$Stop {
   const factory Stop({
-    required int id,
+    required String id,
     String? code,
     required String name,
     String? ttsName,
@@ -16,7 +15,7 @@ class Stop with _$Stop {
     required double lon,
     String? zoneId,
     required int locationType,
-    int? parentStation,
+    String? parentStation,
     String? timezone,
     int? wheelchairBoarding,
     int? levelId,
@@ -24,5 +23,5 @@ class Stop with _$Stop {
     int? access,
   }) = _Stop;
 
-  factory Stop.fromJson(Map<String, Object?> json) => $_StopFromJson(json);
+  factory Stop.fromJson(Map<String, Object?> json) => _$StopFromJson(json);
 }

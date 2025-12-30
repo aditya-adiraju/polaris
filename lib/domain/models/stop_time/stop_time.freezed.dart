@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$StopTime {
 
- int get tripId; int get stopSequence; int get stopId; String? get arrivalTime; String? get departureTime; int? get locationGroupId; int? get locationId; String? get tripHeadsign; String? get startPickupWindow; String? get endPickupWindow; int? get pickupType; int? get dropOffType; int? get continuousPickup; int? get continuousDropOff; int? get shapeDistTraveled; int? get timepoint; int? get pickupBookingRule; int? get dropoffBookingRule;
+ String get tripId; int get stopSequence; String get stopId; String? get arrivalTime; String? get departureTime; int? get locationGroupId; int? get locationId; String? get tripHeadsign; String? get startPickupWindow; String? get endPickupWindow; int? get pickupType; int? get dropOffType; int? get continuousPickup; int? get continuousDropOff; double? get shapeDistTraveled; int? get timepoint; int? get pickupBookingRule; int? get dropoffBookingRule;
 /// Create a copy of StopTime
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $StopTimeCopyWith<$Res>  {
   factory $StopTimeCopyWith(StopTime value, $Res Function(StopTime) _then) = _$StopTimeCopyWithImpl;
 @useResult
 $Res call({
- int tripId, int stopSequence, int stopId, String? arrivalTime, String? departureTime, int? locationGroupId, int? locationId, String? tripHeadsign, String? startPickupWindow, String? endPickupWindow, int? pickupType, int? dropOffType, int? continuousPickup, int? continuousDropOff, int? shapeDistTraveled, int? timepoint, int? pickupBookingRule, int? dropoffBookingRule
+ String tripId, int stopSequence, String stopId, String? arrivalTime, String? departureTime, int? locationGroupId, int? locationId, String? tripHeadsign, String? startPickupWindow, String? endPickupWindow, int? pickupType, int? dropOffType, int? continuousPickup, int? continuousDropOff, double? shapeDistTraveled, int? timepoint, int? pickupBookingRule, int? dropoffBookingRule
 });
 
 
@@ -68,9 +68,9 @@ class _$StopTimeCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? tripId = null,Object? stopSequence = null,Object? stopId = null,Object? arrivalTime = freezed,Object? departureTime = freezed,Object? locationGroupId = freezed,Object? locationId = freezed,Object? tripHeadsign = freezed,Object? startPickupWindow = freezed,Object? endPickupWindow = freezed,Object? pickupType = freezed,Object? dropOffType = freezed,Object? continuousPickup = freezed,Object? continuousDropOff = freezed,Object? shapeDistTraveled = freezed,Object? timepoint = freezed,Object? pickupBookingRule = freezed,Object? dropoffBookingRule = freezed,}) {
   return _then(_self.copyWith(
 tripId: null == tripId ? _self.tripId : tripId // ignore: cast_nullable_to_non_nullable
-as int,stopSequence: null == stopSequence ? _self.stopSequence : stopSequence // ignore: cast_nullable_to_non_nullable
+as String,stopSequence: null == stopSequence ? _self.stopSequence : stopSequence // ignore: cast_nullable_to_non_nullable
 as int,stopId: null == stopId ? _self.stopId : stopId // ignore: cast_nullable_to_non_nullable
-as int,arrivalTime: freezed == arrivalTime ? _self.arrivalTime : arrivalTime // ignore: cast_nullable_to_non_nullable
+as String,arrivalTime: freezed == arrivalTime ? _self.arrivalTime : arrivalTime // ignore: cast_nullable_to_non_nullable
 as String?,departureTime: freezed == departureTime ? _self.departureTime : departureTime // ignore: cast_nullable_to_non_nullable
 as String?,locationGroupId: freezed == locationGroupId ? _self.locationGroupId : locationGroupId // ignore: cast_nullable_to_non_nullable
 as int?,locationId: freezed == locationId ? _self.locationId : locationId // ignore: cast_nullable_to_non_nullable
@@ -82,7 +82,7 @@ as int?,dropOffType: freezed == dropOffType ? _self.dropOffType : dropOffType //
 as int?,continuousPickup: freezed == continuousPickup ? _self.continuousPickup : continuousPickup // ignore: cast_nullable_to_non_nullable
 as int?,continuousDropOff: freezed == continuousDropOff ? _self.continuousDropOff : continuousDropOff // ignore: cast_nullable_to_non_nullable
 as int?,shapeDistTraveled: freezed == shapeDistTraveled ? _self.shapeDistTraveled : shapeDistTraveled // ignore: cast_nullable_to_non_nullable
-as int?,timepoint: freezed == timepoint ? _self.timepoint : timepoint // ignore: cast_nullable_to_non_nullable
+as double?,timepoint: freezed == timepoint ? _self.timepoint : timepoint // ignore: cast_nullable_to_non_nullable
 as int?,pickupBookingRule: freezed == pickupBookingRule ? _self.pickupBookingRule : pickupBookingRule // ignore: cast_nullable_to_non_nullable
 as int?,dropoffBookingRule: freezed == dropoffBookingRule ? _self.dropoffBookingRule : dropoffBookingRule // ignore: cast_nullable_to_non_nullable
 as int?,
@@ -170,7 +170,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int tripId,  int stopSequence,  int stopId,  String? arrivalTime,  String? departureTime,  int? locationGroupId,  int? locationId,  String? tripHeadsign,  String? startPickupWindow,  String? endPickupWindow,  int? pickupType,  int? dropOffType,  int? continuousPickup,  int? continuousDropOff,  int? shapeDistTraveled,  int? timepoint,  int? pickupBookingRule,  int? dropoffBookingRule)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String tripId,  int stopSequence,  String stopId,  String? arrivalTime,  String? departureTime,  int? locationGroupId,  int? locationId,  String? tripHeadsign,  String? startPickupWindow,  String? endPickupWindow,  int? pickupType,  int? dropOffType,  int? continuousPickup,  int? continuousDropOff,  double? shapeDistTraveled,  int? timepoint,  int? pickupBookingRule,  int? dropoffBookingRule)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StopTime() when $default != null:
 return $default(_that.tripId,_that.stopSequence,_that.stopId,_that.arrivalTime,_that.departureTime,_that.locationGroupId,_that.locationId,_that.tripHeadsign,_that.startPickupWindow,_that.endPickupWindow,_that.pickupType,_that.dropOffType,_that.continuousPickup,_that.continuousDropOff,_that.shapeDistTraveled,_that.timepoint,_that.pickupBookingRule,_that.dropoffBookingRule);case _:
@@ -191,7 +191,7 @@ return $default(_that.tripId,_that.stopSequence,_that.stopId,_that.arrivalTime,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int tripId,  int stopSequence,  int stopId,  String? arrivalTime,  String? departureTime,  int? locationGroupId,  int? locationId,  String? tripHeadsign,  String? startPickupWindow,  String? endPickupWindow,  int? pickupType,  int? dropOffType,  int? continuousPickup,  int? continuousDropOff,  int? shapeDistTraveled,  int? timepoint,  int? pickupBookingRule,  int? dropoffBookingRule)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String tripId,  int stopSequence,  String stopId,  String? arrivalTime,  String? departureTime,  int? locationGroupId,  int? locationId,  String? tripHeadsign,  String? startPickupWindow,  String? endPickupWindow,  int? pickupType,  int? dropOffType,  int? continuousPickup,  int? continuousDropOff,  double? shapeDistTraveled,  int? timepoint,  int? pickupBookingRule,  int? dropoffBookingRule)  $default,) {final _that = this;
 switch (_that) {
 case _StopTime():
 return $default(_that.tripId,_that.stopSequence,_that.stopId,_that.arrivalTime,_that.departureTime,_that.locationGroupId,_that.locationId,_that.tripHeadsign,_that.startPickupWindow,_that.endPickupWindow,_that.pickupType,_that.dropOffType,_that.continuousPickup,_that.continuousDropOff,_that.shapeDistTraveled,_that.timepoint,_that.pickupBookingRule,_that.dropoffBookingRule);case _:
@@ -211,7 +211,7 @@ return $default(_that.tripId,_that.stopSequence,_that.stopId,_that.arrivalTime,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int tripId,  int stopSequence,  int stopId,  String? arrivalTime,  String? departureTime,  int? locationGroupId,  int? locationId,  String? tripHeadsign,  String? startPickupWindow,  String? endPickupWindow,  int? pickupType,  int? dropOffType,  int? continuousPickup,  int? continuousDropOff,  int? shapeDistTraveled,  int? timepoint,  int? pickupBookingRule,  int? dropoffBookingRule)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String tripId,  int stopSequence,  String stopId,  String? arrivalTime,  String? departureTime,  int? locationGroupId,  int? locationId,  String? tripHeadsign,  String? startPickupWindow,  String? endPickupWindow,  int? pickupType,  int? dropOffType,  int? continuousPickup,  int? continuousDropOff,  double? shapeDistTraveled,  int? timepoint,  int? pickupBookingRule,  int? dropoffBookingRule)?  $default,) {final _that = this;
 switch (_that) {
 case _StopTime() when $default != null:
 return $default(_that.tripId,_that.stopSequence,_that.stopId,_that.arrivalTime,_that.departureTime,_that.locationGroupId,_that.locationId,_that.tripHeadsign,_that.startPickupWindow,_that.endPickupWindow,_that.pickupType,_that.dropOffType,_that.continuousPickup,_that.continuousDropOff,_that.shapeDistTraveled,_that.timepoint,_that.pickupBookingRule,_that.dropoffBookingRule);case _:
@@ -229,9 +229,9 @@ class _StopTime implements StopTime {
   const _StopTime({required this.tripId, required this.stopSequence, required this.stopId, this.arrivalTime, this.departureTime, this.locationGroupId, this.locationId, this.tripHeadsign, this.startPickupWindow, this.endPickupWindow, this.pickupType, this.dropOffType, this.continuousPickup, this.continuousDropOff, this.shapeDistTraveled, this.timepoint, this.pickupBookingRule, this.dropoffBookingRule});
   factory _StopTime.fromJson(Map<String, dynamic> json) => _$StopTimeFromJson(json);
 
-@override final  int tripId;
+@override final  String tripId;
 @override final  int stopSequence;
-@override final  int stopId;
+@override final  String stopId;
 @override final  String? arrivalTime;
 @override final  String? departureTime;
 @override final  int? locationGroupId;
@@ -243,7 +243,7 @@ class _StopTime implements StopTime {
 @override final  int? dropOffType;
 @override final  int? continuousPickup;
 @override final  int? continuousDropOff;
-@override final  int? shapeDistTraveled;
+@override final  double? shapeDistTraveled;
 @override final  int? timepoint;
 @override final  int? pickupBookingRule;
 @override final  int? dropoffBookingRule;
@@ -281,7 +281,7 @@ abstract mixin class _$StopTimeCopyWith<$Res> implements $StopTimeCopyWith<$Res>
   factory _$StopTimeCopyWith(_StopTime value, $Res Function(_StopTime) _then) = __$StopTimeCopyWithImpl;
 @override @useResult
 $Res call({
- int tripId, int stopSequence, int stopId, String? arrivalTime, String? departureTime, int? locationGroupId, int? locationId, String? tripHeadsign, String? startPickupWindow, String? endPickupWindow, int? pickupType, int? dropOffType, int? continuousPickup, int? continuousDropOff, int? shapeDistTraveled, int? timepoint, int? pickupBookingRule, int? dropoffBookingRule
+ String tripId, int stopSequence, String stopId, String? arrivalTime, String? departureTime, int? locationGroupId, int? locationId, String? tripHeadsign, String? startPickupWindow, String? endPickupWindow, int? pickupType, int? dropOffType, int? continuousPickup, int? continuousDropOff, double? shapeDistTraveled, int? timepoint, int? pickupBookingRule, int? dropoffBookingRule
 });
 
 
@@ -301,9 +301,9 @@ class __$StopTimeCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? tripId = null,Object? stopSequence = null,Object? stopId = null,Object? arrivalTime = freezed,Object? departureTime = freezed,Object? locationGroupId = freezed,Object? locationId = freezed,Object? tripHeadsign = freezed,Object? startPickupWindow = freezed,Object? endPickupWindow = freezed,Object? pickupType = freezed,Object? dropOffType = freezed,Object? continuousPickup = freezed,Object? continuousDropOff = freezed,Object? shapeDistTraveled = freezed,Object? timepoint = freezed,Object? pickupBookingRule = freezed,Object? dropoffBookingRule = freezed,}) {
   return _then(_StopTime(
 tripId: null == tripId ? _self.tripId : tripId // ignore: cast_nullable_to_non_nullable
-as int,stopSequence: null == stopSequence ? _self.stopSequence : stopSequence // ignore: cast_nullable_to_non_nullable
+as String,stopSequence: null == stopSequence ? _self.stopSequence : stopSequence // ignore: cast_nullable_to_non_nullable
 as int,stopId: null == stopId ? _self.stopId : stopId // ignore: cast_nullable_to_non_nullable
-as int,arrivalTime: freezed == arrivalTime ? _self.arrivalTime : arrivalTime // ignore: cast_nullable_to_non_nullable
+as String,arrivalTime: freezed == arrivalTime ? _self.arrivalTime : arrivalTime // ignore: cast_nullable_to_non_nullable
 as String?,departureTime: freezed == departureTime ? _self.departureTime : departureTime // ignore: cast_nullable_to_non_nullable
 as String?,locationGroupId: freezed == locationGroupId ? _self.locationGroupId : locationGroupId // ignore: cast_nullable_to_non_nullable
 as int?,locationId: freezed == locationId ? _self.locationId : locationId // ignore: cast_nullable_to_non_nullable
@@ -315,7 +315,7 @@ as int?,dropOffType: freezed == dropOffType ? _self.dropOffType : dropOffType //
 as int?,continuousPickup: freezed == continuousPickup ? _self.continuousPickup : continuousPickup // ignore: cast_nullable_to_non_nullable
 as int?,continuousDropOff: freezed == continuousDropOff ? _self.continuousDropOff : continuousDropOff // ignore: cast_nullable_to_non_nullable
 as int?,shapeDistTraveled: freezed == shapeDistTraveled ? _self.shapeDistTraveled : shapeDistTraveled // ignore: cast_nullable_to_non_nullable
-as int?,timepoint: freezed == timepoint ? _self.timepoint : timepoint // ignore: cast_nullable_to_non_nullable
+as double?,timepoint: freezed == timepoint ? _self.timepoint : timepoint // ignore: cast_nullable_to_non_nullable
 as int?,pickupBookingRule: freezed == pickupBookingRule ? _self.pickupBookingRule : pickupBookingRule // ignore: cast_nullable_to_non_nullable
 as int?,dropoffBookingRule: freezed == dropoffBookingRule ? _self.dropoffBookingRule : dropoffBookingRule // ignore: cast_nullable_to_non_nullable
 as int?,

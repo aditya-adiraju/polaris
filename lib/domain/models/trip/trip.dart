@@ -6,16 +6,16 @@ part 'trip.g.dart';
 enum DirectionId { outbound, inbound }
 
 @freezed
-class Trip with _$Trip {
+abstract class Trip with _$Trip {
   const factory Trip({
-    required int id,
-    required int routeId,
-    required int serviceId,
+    required String id,
+    required String routeId,
+    required String serviceId,
     String? headsign,
     String? shortName,
     DirectionId? directionId,
-    int? blockId,
-    int? shapeId,
+    String? blockId,
+    String? shapeId,
     int? bikesAllowed,
     int? carsAllowed
   }) = _Trip;

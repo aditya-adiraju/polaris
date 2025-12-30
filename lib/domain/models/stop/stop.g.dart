@@ -7,7 +7,7 @@ part of 'stop.dart';
 // **************************************************************************
 
 _Stop _$StopFromJson(Map<String, dynamic> json) => _Stop(
-  id: (json['id'] as num).toInt(),
+  id: json['id'] as String,
   code: json['code'] as String?,
   name: json['name'] as String,
   ttsName: json['ttsName'] as String?,
@@ -16,7 +16,7 @@ _Stop _$StopFromJson(Map<String, dynamic> json) => _Stop(
   lon: (json['lon'] as num).toDouble(),
   zoneId: json['zoneId'] as String?,
   locationType: (json['locationType'] as num).toInt(),
-  parentStation: (json['parentStation'] as num?)?.toInt(),
+  parentStation: json['parentStation'] as String?,
   timezone: json['timezone'] as String?,
   wheelchairBoarding: (json['wheelchairBoarding'] as num?)?.toInt(),
   levelId: (json['levelId'] as num?)?.toInt(),

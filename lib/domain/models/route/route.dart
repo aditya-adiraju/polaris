@@ -6,14 +6,16 @@ part 'route.freezed.dart';
 part 'route.g.dart';
 
 @freezed
-class Route with _$Route {
+abstract class Route with _$Route {
   const factory Route({
-    required int id,
-    required int agencyId,
-    required int shortName,
+    required String id,
+    required String agencyId,
+    required String shortName,
     required String longName,
     String? description,
-    required RouteType routeType
+    required int routeType,
+    String? routeColor,
+    String? routeTextColor,
   }) = _Route;
 
   factory Route.fromJson(Map<String, Object?> json) => _$RouteFromJson(json);

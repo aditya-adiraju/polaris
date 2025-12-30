@@ -4,11 +4,11 @@ part 'stop_time.freezed.dart';
 part 'stop_time.g.dart';
 
 @freezed
-class StopTime with _$StopTime {
+abstract class StopTime with _$StopTime {
   const factory StopTime({
-    required int tripId,
+    required String tripId,
     required int stopSequence,
-    required int stopId,
+    required String stopId,
     String? arrivalTime,
     String? departureTime,
     int? locationGroupId,
@@ -20,7 +20,7 @@ class StopTime with _$StopTime {
     int? dropOffType,
     int? continuousPickup,
     int? continuousDropOff,
-    int? shapeDistTraveled,
+    double? shapeDistTraveled,
     int? timepoint,
     int? pickupBookingRule,
     int? dropoffBookingRule

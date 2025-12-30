@@ -7,12 +7,14 @@ part of 'route.dart';
 // **************************************************************************
 
 _Route _$RouteFromJson(Map<String, dynamic> json) => _Route(
-  id: (json['id'] as num).toInt(),
-  agencyId: (json['agencyId'] as num).toInt(),
-  shortName: (json['shortName'] as num).toInt(),
+  id: json['id'] as String,
+  agencyId: json['agencyId'] as String,
+  shortName: json['shortName'] as String,
   longName: json['longName'] as String,
   description: json['description'] as String?,
-  routeType: $enumDecode(_$RouteTypeEnumMap, json['routeType']),
+  routeType: (json['routeType'] as num).toInt(),
+  routeColor: json['routeColor'] as String?,
+  routeTextColor: json['routeTextColor'] as String?,
 );
 
 Map<String, dynamic> _$RouteToJson(_Route instance) => <String, dynamic>{
@@ -21,13 +23,7 @@ Map<String, dynamic> _$RouteToJson(_Route instance) => <String, dynamic>{
   'shortName': instance.shortName,
   'longName': instance.longName,
   'description': instance.description,
-  'routeType': _$RouteTypeEnumMap[instance.routeType]!,
-};
-
-const _$RouteTypeEnumMap = {
-  RouteType.skytrain: 'skytrain',
-  RouteType.wce: 'wce',
-  RouteType.bus: 'bus',
-  RouteType.seabus: 'seabus',
-  RouteType.handydart: 'handydart',
+  'routeType': instance.routeType,
+  'routeColor': instance.routeColor,
+  'routeTextColor': instance.routeTextColor,
 };

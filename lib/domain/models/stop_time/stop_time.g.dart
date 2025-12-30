@@ -7,9 +7,9 @@ part of 'stop_time.dart';
 // **************************************************************************
 
 _StopTime _$StopTimeFromJson(Map<String, dynamic> json) => _StopTime(
-  tripId: (json['tripId'] as num).toInt(),
+  tripId: json['tripId'] as String,
   stopSequence: (json['stopSequence'] as num).toInt(),
-  stopId: (json['stopId'] as num).toInt(),
+  stopId: json['stopId'] as String,
   arrivalTime: json['arrivalTime'] as String?,
   departureTime: json['departureTime'] as String?,
   locationGroupId: (json['locationGroupId'] as num?)?.toInt(),
@@ -21,7 +21,7 @@ _StopTime _$StopTimeFromJson(Map<String, dynamic> json) => _StopTime(
   dropOffType: (json['dropOffType'] as num?)?.toInt(),
   continuousPickup: (json['continuousPickup'] as num?)?.toInt(),
   continuousDropOff: (json['continuousDropOff'] as num?)?.toInt(),
-  shapeDistTraveled: (json['shapeDistTraveled'] as num?)?.toInt(),
+  shapeDistTraveled: (json['shapeDistTraveled'] as num?)?.toDouble(),
   timepoint: (json['timepoint'] as num?)?.toInt(),
   pickupBookingRule: (json['pickupBookingRule'] as num?)?.toInt(),
   dropoffBookingRule: (json['dropoffBookingRule'] as num?)?.toInt(),

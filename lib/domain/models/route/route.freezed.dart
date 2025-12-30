@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Route {
 
- int get id; int get agencyId; int get shortName; String get longName; String? get description; RouteType get routeType;
+ String get id; String get agencyId; String get shortName; String get longName; String? get description; int get routeType; String? get routeColor; String? get routeTextColor;
 /// Create a copy of Route
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $RouteCopyWith<Route> get copyWith => _$RouteCopyWithImpl<Route>(this as Route, 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Route&&(identical(other.id, id) || other.id == id)&&(identical(other.agencyId, agencyId) || other.agencyId == agencyId)&&(identical(other.shortName, shortName) || other.shortName == shortName)&&(identical(other.longName, longName) || other.longName == longName)&&(identical(other.description, description) || other.description == description)&&(identical(other.routeType, routeType) || other.routeType == routeType));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Route&&(identical(other.id, id) || other.id == id)&&(identical(other.agencyId, agencyId) || other.agencyId == agencyId)&&(identical(other.shortName, shortName) || other.shortName == shortName)&&(identical(other.longName, longName) || other.longName == longName)&&(identical(other.description, description) || other.description == description)&&(identical(other.routeType, routeType) || other.routeType == routeType)&&(identical(other.routeColor, routeColor) || other.routeColor == routeColor)&&(identical(other.routeTextColor, routeTextColor) || other.routeTextColor == routeTextColor));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,agencyId,shortName,longName,description,routeType);
+int get hashCode => Object.hash(runtimeType,id,agencyId,shortName,longName,description,routeType,routeColor,routeTextColor);
 
 @override
 String toString() {
-  return 'Route(id: $id, agencyId: $agencyId, shortName: $shortName, longName: $longName, description: $description, routeType: $routeType)';
+  return 'Route(id: $id, agencyId: $agencyId, shortName: $shortName, longName: $longName, description: $description, routeType: $routeType, routeColor: $routeColor, routeTextColor: $routeTextColor)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $RouteCopyWith<$Res>  {
   factory $RouteCopyWith(Route value, $Res Function(Route) _then) = _$RouteCopyWithImpl;
 @useResult
 $Res call({
- int id, int agencyId, int shortName, String longName, String? description, RouteType routeType
+ String id, String agencyId, String shortName, String longName, String? description, int routeType, String? routeColor, String? routeTextColor
 });
 
 
@@ -65,15 +65,17 @@ class _$RouteCopyWithImpl<$Res>
 
 /// Create a copy of Route
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? agencyId = null,Object? shortName = null,Object? longName = null,Object? description = freezed,Object? routeType = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? agencyId = null,Object? shortName = null,Object? longName = null,Object? description = freezed,Object? routeType = null,Object? routeColor = freezed,Object? routeTextColor = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,agencyId: null == agencyId ? _self.agencyId : agencyId // ignore: cast_nullable_to_non_nullable
-as int,shortName: null == shortName ? _self.shortName : shortName // ignore: cast_nullable_to_non_nullable
-as int,longName: null == longName ? _self.longName : longName // ignore: cast_nullable_to_non_nullable
+as String,agencyId: null == agencyId ? _self.agencyId : agencyId // ignore: cast_nullable_to_non_nullable
+as String,shortName: null == shortName ? _self.shortName : shortName // ignore: cast_nullable_to_non_nullable
+as String,longName: null == longName ? _self.longName : longName // ignore: cast_nullable_to_non_nullable
 as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,routeType: null == routeType ? _self.routeType : routeType // ignore: cast_nullable_to_non_nullable
-as RouteType,
+as int,routeColor: freezed == routeColor ? _self.routeColor : routeColor // ignore: cast_nullable_to_non_nullable
+as String?,routeTextColor: freezed == routeTextColor ? _self.routeTextColor : routeTextColor // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -158,10 +160,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  int agencyId,  int shortName,  String longName,  String? description,  RouteType routeType)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String agencyId,  String shortName,  String longName,  String? description,  int routeType,  String? routeColor,  String? routeTextColor)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Route() when $default != null:
-return $default(_that.id,_that.agencyId,_that.shortName,_that.longName,_that.description,_that.routeType);case _:
+return $default(_that.id,_that.agencyId,_that.shortName,_that.longName,_that.description,_that.routeType,_that.routeColor,_that.routeTextColor);case _:
   return orElse();
 
 }
@@ -179,10 +181,10 @@ return $default(_that.id,_that.agencyId,_that.shortName,_that.longName,_that.des
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  int agencyId,  int shortName,  String longName,  String? description,  RouteType routeType)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String agencyId,  String shortName,  String longName,  String? description,  int routeType,  String? routeColor,  String? routeTextColor)  $default,) {final _that = this;
 switch (_that) {
 case _Route():
-return $default(_that.id,_that.agencyId,_that.shortName,_that.longName,_that.description,_that.routeType);case _:
+return $default(_that.id,_that.agencyId,_that.shortName,_that.longName,_that.description,_that.routeType,_that.routeColor,_that.routeTextColor);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -199,10 +201,10 @@ return $default(_that.id,_that.agencyId,_that.shortName,_that.longName,_that.des
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  int agencyId,  int shortName,  String longName,  String? description,  RouteType routeType)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String agencyId,  String shortName,  String longName,  String? description,  int routeType,  String? routeColor,  String? routeTextColor)?  $default,) {final _that = this;
 switch (_that) {
 case _Route() when $default != null:
-return $default(_that.id,_that.agencyId,_that.shortName,_that.longName,_that.description,_that.routeType);case _:
+return $default(_that.id,_that.agencyId,_that.shortName,_that.longName,_that.description,_that.routeType,_that.routeColor,_that.routeTextColor);case _:
   return null;
 
 }
@@ -214,15 +216,17 @@ return $default(_that.id,_that.agencyId,_that.shortName,_that.longName,_that.des
 @JsonSerializable()
 
 class _Route implements Route {
-  const _Route({required this.id, required this.agencyId, required this.shortName, required this.longName, this.description, required this.routeType});
+  const _Route({required this.id, required this.agencyId, required this.shortName, required this.longName, this.description, required this.routeType, this.routeColor, this.routeTextColor});
   factory _Route.fromJson(Map<String, dynamic> json) => _$RouteFromJson(json);
 
-@override final  int id;
-@override final  int agencyId;
-@override final  int shortName;
+@override final  String id;
+@override final  String agencyId;
+@override final  String shortName;
 @override final  String longName;
 @override final  String? description;
-@override final  RouteType routeType;
+@override final  int routeType;
+@override final  String? routeColor;
+@override final  String? routeTextColor;
 
 /// Create a copy of Route
 /// with the given fields replaced by the non-null parameter values.
@@ -237,16 +241,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Route&&(identical(other.id, id) || other.id == id)&&(identical(other.agencyId, agencyId) || other.agencyId == agencyId)&&(identical(other.shortName, shortName) || other.shortName == shortName)&&(identical(other.longName, longName) || other.longName == longName)&&(identical(other.description, description) || other.description == description)&&(identical(other.routeType, routeType) || other.routeType == routeType));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Route&&(identical(other.id, id) || other.id == id)&&(identical(other.agencyId, agencyId) || other.agencyId == agencyId)&&(identical(other.shortName, shortName) || other.shortName == shortName)&&(identical(other.longName, longName) || other.longName == longName)&&(identical(other.description, description) || other.description == description)&&(identical(other.routeType, routeType) || other.routeType == routeType)&&(identical(other.routeColor, routeColor) || other.routeColor == routeColor)&&(identical(other.routeTextColor, routeTextColor) || other.routeTextColor == routeTextColor));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,agencyId,shortName,longName,description,routeType);
+int get hashCode => Object.hash(runtimeType,id,agencyId,shortName,longName,description,routeType,routeColor,routeTextColor);
 
 @override
 String toString() {
-  return 'Route(id: $id, agencyId: $agencyId, shortName: $shortName, longName: $longName, description: $description, routeType: $routeType)';
+  return 'Route(id: $id, agencyId: $agencyId, shortName: $shortName, longName: $longName, description: $description, routeType: $routeType, routeColor: $routeColor, routeTextColor: $routeTextColor)';
 }
 
 
@@ -257,7 +261,7 @@ abstract mixin class _$RouteCopyWith<$Res> implements $RouteCopyWith<$Res> {
   factory _$RouteCopyWith(_Route value, $Res Function(_Route) _then) = __$RouteCopyWithImpl;
 @override @useResult
 $Res call({
- int id, int agencyId, int shortName, String longName, String? description, RouteType routeType
+ String id, String agencyId, String shortName, String longName, String? description, int routeType, String? routeColor, String? routeTextColor
 });
 
 
@@ -274,15 +278,17 @@ class __$RouteCopyWithImpl<$Res>
 
 /// Create a copy of Route
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? agencyId = null,Object? shortName = null,Object? longName = null,Object? description = freezed,Object? routeType = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? agencyId = null,Object? shortName = null,Object? longName = null,Object? description = freezed,Object? routeType = null,Object? routeColor = freezed,Object? routeTextColor = freezed,}) {
   return _then(_Route(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,agencyId: null == agencyId ? _self.agencyId : agencyId // ignore: cast_nullable_to_non_nullable
-as int,shortName: null == shortName ? _self.shortName : shortName // ignore: cast_nullable_to_non_nullable
-as int,longName: null == longName ? _self.longName : longName // ignore: cast_nullable_to_non_nullable
+as String,agencyId: null == agencyId ? _self.agencyId : agencyId // ignore: cast_nullable_to_non_nullable
+as String,shortName: null == shortName ? _self.shortName : shortName // ignore: cast_nullable_to_non_nullable
+as String,longName: null == longName ? _self.longName : longName // ignore: cast_nullable_to_non_nullable
 as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,routeType: null == routeType ? _self.routeType : routeType // ignore: cast_nullable_to_non_nullable
-as RouteType,
+as int,routeColor: freezed == routeColor ? _self.routeColor : routeColor // ignore: cast_nullable_to_non_nullable
+as String?,routeTextColor: freezed == routeTextColor ? _self.routeTextColor : routeTextColor // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 

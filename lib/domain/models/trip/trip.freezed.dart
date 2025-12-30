@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Trip {
 
- int get id; int get routeId; int get serviceId; String? get headsign; String? get shortName; DirectionId? get directionId; int? get blockId; int? get shapeId; int? get bikesAllowed; int? get carsAllowed;
+ String get id; String get routeId; String get serviceId; String? get headsign; String? get shortName; DirectionId? get directionId; String? get blockId; String? get shapeId; int? get bikesAllowed; int? get carsAllowed;
 /// Create a copy of Trip
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $TripCopyWith<$Res>  {
   factory $TripCopyWith(Trip value, $Res Function(Trip) _then) = _$TripCopyWithImpl;
 @useResult
 $Res call({
- int id, int routeId, int serviceId, String? headsign, String? shortName, DirectionId? directionId, int? blockId, int? shapeId, int? bikesAllowed, int? carsAllowed
+ String id, String routeId, String serviceId, String? headsign, String? shortName, DirectionId? directionId, String? blockId, String? shapeId, int? bikesAllowed, int? carsAllowed
 });
 
 
@@ -68,14 +68,14 @@ class _$TripCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? routeId = null,Object? serviceId = null,Object? headsign = freezed,Object? shortName = freezed,Object? directionId = freezed,Object? blockId = freezed,Object? shapeId = freezed,Object? bikesAllowed = freezed,Object? carsAllowed = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,routeId: null == routeId ? _self.routeId : routeId // ignore: cast_nullable_to_non_nullable
-as int,serviceId: null == serviceId ? _self.serviceId : serviceId // ignore: cast_nullable_to_non_nullable
-as int,headsign: freezed == headsign ? _self.headsign : headsign // ignore: cast_nullable_to_non_nullable
+as String,routeId: null == routeId ? _self.routeId : routeId // ignore: cast_nullable_to_non_nullable
+as String,serviceId: null == serviceId ? _self.serviceId : serviceId // ignore: cast_nullable_to_non_nullable
+as String,headsign: freezed == headsign ? _self.headsign : headsign // ignore: cast_nullable_to_non_nullable
 as String?,shortName: freezed == shortName ? _self.shortName : shortName // ignore: cast_nullable_to_non_nullable
 as String?,directionId: freezed == directionId ? _self.directionId : directionId // ignore: cast_nullable_to_non_nullable
 as DirectionId?,blockId: freezed == blockId ? _self.blockId : blockId // ignore: cast_nullable_to_non_nullable
-as int?,shapeId: freezed == shapeId ? _self.shapeId : shapeId // ignore: cast_nullable_to_non_nullable
-as int?,bikesAllowed: freezed == bikesAllowed ? _self.bikesAllowed : bikesAllowed // ignore: cast_nullable_to_non_nullable
+as String?,shapeId: freezed == shapeId ? _self.shapeId : shapeId // ignore: cast_nullable_to_non_nullable
+as String?,bikesAllowed: freezed == bikesAllowed ? _self.bikesAllowed : bikesAllowed // ignore: cast_nullable_to_non_nullable
 as int?,carsAllowed: freezed == carsAllowed ? _self.carsAllowed : carsAllowed // ignore: cast_nullable_to_non_nullable
 as int?,
   ));
@@ -162,7 +162,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  int routeId,  int serviceId,  String? headsign,  String? shortName,  DirectionId? directionId,  int? blockId,  int? shapeId,  int? bikesAllowed,  int? carsAllowed)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String routeId,  String serviceId,  String? headsign,  String? shortName,  DirectionId? directionId,  String? blockId,  String? shapeId,  int? bikesAllowed,  int? carsAllowed)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Trip() when $default != null:
 return $default(_that.id,_that.routeId,_that.serviceId,_that.headsign,_that.shortName,_that.directionId,_that.blockId,_that.shapeId,_that.bikesAllowed,_that.carsAllowed);case _:
@@ -183,7 +183,7 @@ return $default(_that.id,_that.routeId,_that.serviceId,_that.headsign,_that.shor
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  int routeId,  int serviceId,  String? headsign,  String? shortName,  DirectionId? directionId,  int? blockId,  int? shapeId,  int? bikesAllowed,  int? carsAllowed)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String routeId,  String serviceId,  String? headsign,  String? shortName,  DirectionId? directionId,  String? blockId,  String? shapeId,  int? bikesAllowed,  int? carsAllowed)  $default,) {final _that = this;
 switch (_that) {
 case _Trip():
 return $default(_that.id,_that.routeId,_that.serviceId,_that.headsign,_that.shortName,_that.directionId,_that.blockId,_that.shapeId,_that.bikesAllowed,_that.carsAllowed);case _:
@@ -203,7 +203,7 @@ return $default(_that.id,_that.routeId,_that.serviceId,_that.headsign,_that.shor
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  int routeId,  int serviceId,  String? headsign,  String? shortName,  DirectionId? directionId,  int? blockId,  int? shapeId,  int? bikesAllowed,  int? carsAllowed)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String routeId,  String serviceId,  String? headsign,  String? shortName,  DirectionId? directionId,  String? blockId,  String? shapeId,  int? bikesAllowed,  int? carsAllowed)?  $default,) {final _that = this;
 switch (_that) {
 case _Trip() when $default != null:
 return $default(_that.id,_that.routeId,_that.serviceId,_that.headsign,_that.shortName,_that.directionId,_that.blockId,_that.shapeId,_that.bikesAllowed,_that.carsAllowed);case _:
@@ -221,14 +221,14 @@ class _Trip implements Trip {
   const _Trip({required this.id, required this.routeId, required this.serviceId, this.headsign, this.shortName, this.directionId, this.blockId, this.shapeId, this.bikesAllowed, this.carsAllowed});
   factory _Trip.fromJson(Map<String, dynamic> json) => _$TripFromJson(json);
 
-@override final  int id;
-@override final  int routeId;
-@override final  int serviceId;
+@override final  String id;
+@override final  String routeId;
+@override final  String serviceId;
 @override final  String? headsign;
 @override final  String? shortName;
 @override final  DirectionId? directionId;
-@override final  int? blockId;
-@override final  int? shapeId;
+@override final  String? blockId;
+@override final  String? shapeId;
 @override final  int? bikesAllowed;
 @override final  int? carsAllowed;
 
@@ -265,7 +265,7 @@ abstract mixin class _$TripCopyWith<$Res> implements $TripCopyWith<$Res> {
   factory _$TripCopyWith(_Trip value, $Res Function(_Trip) _then) = __$TripCopyWithImpl;
 @override @useResult
 $Res call({
- int id, int routeId, int serviceId, String? headsign, String? shortName, DirectionId? directionId, int? blockId, int? shapeId, int? bikesAllowed, int? carsAllowed
+ String id, String routeId, String serviceId, String? headsign, String? shortName, DirectionId? directionId, String? blockId, String? shapeId, int? bikesAllowed, int? carsAllowed
 });
 
 
@@ -285,14 +285,14 @@ class __$TripCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? routeId = null,Object? serviceId = null,Object? headsign = freezed,Object? shortName = freezed,Object? directionId = freezed,Object? blockId = freezed,Object? shapeId = freezed,Object? bikesAllowed = freezed,Object? carsAllowed = freezed,}) {
   return _then(_Trip(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,routeId: null == routeId ? _self.routeId : routeId // ignore: cast_nullable_to_non_nullable
-as int,serviceId: null == serviceId ? _self.serviceId : serviceId // ignore: cast_nullable_to_non_nullable
-as int,headsign: freezed == headsign ? _self.headsign : headsign // ignore: cast_nullable_to_non_nullable
+as String,routeId: null == routeId ? _self.routeId : routeId // ignore: cast_nullable_to_non_nullable
+as String,serviceId: null == serviceId ? _self.serviceId : serviceId // ignore: cast_nullable_to_non_nullable
+as String,headsign: freezed == headsign ? _self.headsign : headsign // ignore: cast_nullable_to_non_nullable
 as String?,shortName: freezed == shortName ? _self.shortName : shortName // ignore: cast_nullable_to_non_nullable
 as String?,directionId: freezed == directionId ? _self.directionId : directionId // ignore: cast_nullable_to_non_nullable
 as DirectionId?,blockId: freezed == blockId ? _self.blockId : blockId // ignore: cast_nullable_to_non_nullable
-as int?,shapeId: freezed == shapeId ? _self.shapeId : shapeId // ignore: cast_nullable_to_non_nullable
-as int?,bikesAllowed: freezed == bikesAllowed ? _self.bikesAllowed : bikesAllowed // ignore: cast_nullable_to_non_nullable
+as String?,shapeId: freezed == shapeId ? _self.shapeId : shapeId // ignore: cast_nullable_to_non_nullable
+as String?,bikesAllowed: freezed == bikesAllowed ? _self.bikesAllowed : bikesAllowed // ignore: cast_nullable_to_non_nullable
 as int?,carsAllowed: freezed == carsAllowed ? _self.carsAllowed : carsAllowed // ignore: cast_nullable_to_non_nullable
 as int?,
   ));
