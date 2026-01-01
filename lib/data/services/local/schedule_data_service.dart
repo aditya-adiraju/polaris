@@ -32,6 +32,19 @@ class ScheduleDataService {
     return routes;
   }
 
+  Future<Route> getRoute(String routeId) async {
+    // let's stub this for now.
+    return Route(
+        id: "6641",
+        agencyId: "TL",
+        shortName: "99",
+        longName: "Commercial-Broadway/UBC (B-Line)",
+        routeType: 3,
+        routeColor: "d04110",
+        routeTextColor: "FFFFFF"
+    );
+  }
+
   /// get a list of Stops from GTFS Schedule Data
   Future<List<Stop>> getStops() async {
     var rows = await loadCSV(Assets.stops);
